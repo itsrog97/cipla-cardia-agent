@@ -11,7 +11,7 @@ import streamlit as st
 import engine as E
 import signals as S
 
-st.set_page_config(page_title="CARDIA-PRIORITISE", layout="wide")
+st.set_page_config(page_title="Cipla AI Enabled Opportunity Prioritization", layout="wide")
 
 
 # ---------- cached data ----------
