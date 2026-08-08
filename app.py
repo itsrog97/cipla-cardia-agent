@@ -21,7 +21,7 @@ def get_data(path):
     return df, E.market_summary(df)
 
 
-st.title("CARDIA-PRIORITISE")
+st.title("Cipla AI Enabled Opportunity Prioritization")
 st.caption("AI-enabled opportunity prioritisation | Cipla India Cardiac | Ascend Season 4")
 
 # ---------- sidebar: the demo surface ----------
@@ -137,3 +137,5 @@ with tab4:
 with st.expander("External data sources (deck Appendix)"):
     for s in S.SOURCES:
         st.write("-", s)
+        st.divider()
+st.caption("Built by Aditya Kumar · Shivani Dora | IIFT Delhi | Cipla Ascend Season 4")
