@@ -1,0 +1,29 @@
+# Hypothesis Register
+
+Every product opportunity in this project is a **[HYPOTHESIS]** until it is validated with Icebreaker's data or users. This register gives each one an ID, so the audit, strategy, MVP scope and (later) analytics plan can refer to the same statement.
+
+- **Status values:** `Untested` → `Evidence requested` → `Supported` / `Refuted`.
+- **All statuses are `Untested`** as of 2026-09-28. No Icebreaker usage data has been seen.
+- Evidence IDs (`E#`, `S#`) refer to [`../ux-audit/DISCOVERY_LOG.md`](../ux-audit/DISCOVERY_LOG.md). Friction IDs (`F-#`) refer to [`../ux-audit/ICEBREAKER_UX_AUDIT.md`](../ux-audit/ICEBREAKER_UX_AUDIT.md).
+
+| ID | Hypothesis | Why we believe it (evidence) | Confidence | How to validate | Primary metric | Links |
+|---|---|---|---|---|---|---|
+| **H-01** | An Android app would meaningfully grow the addressable member pool, especially at non-US schools. | iPhone-only [E12]; no Play listing [E15]; many non-US schools listed [E5] | Medium | Device mix of web visitors and web sign-ups (from existing analytics); support requests asking for Android; a waitlist experiment | Share of web sign-ups on Android; Android install → activated member | F-01 |
+| **H-02** | A meaningful share of outreach preparation happens on laptops and tablets. Layouts built for large screens (split views, grids) would raise conversations started per session on those devices. | "Designed for iPhone" only [E12]; the web app exists behind auth [E6]; networking prep is desk-heavy (assumption) | Medium–Low | Device-class mix for `/home` sessions; messages started per session by device class | Conversations started per session (tablet and desktop) | F-02 |
+| **H-03** | Notifications that deep-link straight into the relevant conversation shorten time-to-reply, compared with notifications that open the app generically. | Messages and Alerts badges [S1–S6]; universal links already configured [E11]; Support FAQ on missed messages [E7] | Medium | A/B test on notification destination | Median time to first reply; share of openers answered within 24 h | F-06 |
+| **H-04** | Asking for push permission in context (right after the first Break the Ice or first reply) gives a higher opt-in rate than asking at first launch. | Push is opt-in [E8]; notification settings are the top troubleshooting answer [E7] | Medium (well-established industry pattern) | A/B test on prompt timing | Push opt-in rate; D7 retention of opted-in users | F-06 |
+| **H-05** | Progressive profiling raises activation without lowering match quality. Here, that means unlocking the first Match of the Day after goals, interests and photo, with the remaining steps becoming nudges. | 13-step profile setup [E7] | Low (actual drop-off unknown) | Funnel analysis of the 13 steps; A/B test on a shorter required set | Sign-up → first Break the Ice within 24 h; profile completion at D7 | F-12 |
+| **H-06** | An editable, clearly labelled AI-suggested opener in the Break the Ice composer increases openers sent and replies received. | AI openers exist per the Terms [E9]; outreach anxiety is the core problem [E1, E5, E12] | Medium (may already exist in app; UNKNOWN) | Compare composer → send and reply rates with and without the suggestion | Composer open → message sent; opener reply rate | F-07 |
+| **H-07** | A phone-first invite/download page with platform-aware install buttons raises install conversion from shared links. | `/auth` is not phone-responsive and leads with a QR code [E5, measured] | High | Before/after comparison on `/auth` | `/auth` visit → store click → install | F-03, F-04 |
+| **H-08** | Continuous hand-off (sign up anywhere, then land in the same account and context on the device in hand, using deferred deep links) reduces abandoned web sign-ups. | Two competing CTAs [E1]; universal links exist for iOS only [E11] | Medium | Track web sign-up → first app session | Web sign-up → first app session within 24 h | F-05 |
+| **H-09** | A single filters sheet (phone) or sidebar (tablet/desktop) exposing every facet (school, graduation year, focus area, …) increases filter use and search success. | Only 3 chips visible [S4]; Support promises more filters [E7] | Medium | Usability test; filter-usage analytics | Filter usage rate; search → profile view → Break the Ice | F-10 |
+| **H-10** | A "See all" path from Home carousels to a vertical list increases profiles viewed per session. | About 3.5 cards visible per carousel row [S1, S2] | Medium | A/B test | Profile views per session | F-11 |
+| **H-11** | A gentle reminder about saved-but-not-contacted people increases conversion of saves into Break the Ice. | Saved exists [S3]; My Saved Icebreakers on Home [S1] | Low | A/B test | Saved → Break the Ice within 7 days | Future |
+| **H-12** | An in-person mode (show or scan a profile QR code at events) turns offline meetings into in-app conversations. | Icebreaker hosts in-person events [E14] | Low | Pilot at one event | Conversations started at the event, and replies within 7 days | Future |
+| **H-13** | One React Native / Expo codebase can deliver iOS, Android, tablet and web parity at a cost a 2–10 person team [E14] can sustain. | Team size [E14]; current iOS stack UNKNOWN | Medium | The MVP itself as a proof point: measure the share of code shared across platforms; confirm the current stack with Icebreaker | % shared code; platform-specific defects | Architecture |
+
+## How the MVP uses this register
+
+- The MVP **demonstrates** H-02, H-03, H-06, H-07 (as a design recommendation) and H-13. Those experiences will be built and clickable, using mocked data.
+- The MVP **cannot prove** any hypothesis. Proof needs Icebreaker's real users and analytics. The founder demo must say so.
+- The proposed metrics become the analytics framework in a later phase (Phase 23), labelled **PROPOSED MOBILE PRODUCT METRICS**.
