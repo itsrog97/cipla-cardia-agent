@@ -1,0 +1,14 @@
+# Dependencies & builds
+node_modules/
+.expo/
+dist/
+web-build/
+*.log
+
+# Secrets: only .env.example may be committed
+.env
+.env.*
+!.env.example
+
+# Discovery output contains third-party screenshots; never commit it
+scripts/discovery/out/
