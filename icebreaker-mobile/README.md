@@ -99,4 +99,4 @@ Copy `.env.example` to `.env.local` to override. `EXPO_PUBLIC_*` values are comp
 - `.gitignore` excludes `.env*`, keystores, `keystore.properties`, `credentials.json`, APK/AAB files.
 
 ## Known limitations (v0.1)
-See `docs/qa-report.md` for the full list. Highlights: no push notifications yet; profile editing, threads, reactions, media posting and AI reply helpers open/remain on the website; not yet tested on a physical device or emulator by the developer (no emulator available in the build environment) — the APK needs your on-device check.
+See `docs/qa-report.md` for the full list. Highlights: no push notifications yet; profile editing, threads, reactions, media posting and AI reply helpers open/remain on the website; not yet tested on a physical device (the build environment has no hardware-accelerated emulator) — the APK needs your on-device check.
