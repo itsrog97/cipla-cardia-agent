@@ -30,4 +30,5 @@ All notable changes to the Icebreaker mobile app. Versions follow `app.json` (`e
 ### Testing status
 Automated: typecheck ✅, lint ✅, expo-doctor ✅, Jest 39/39 ✅. Web-rendered QA of the same code against the live API: 33/33 walkthrough checks, 12/12 failure-mode checks, 5 viewports ✅. APK: builds, `apksigner` verified, minSdk 24 / targetSdk 36, no credentials in the bundle. On-device Android testing: **pending (you)**.
 
-APK SHA-256: `6fa43be47a678f45f7d49f5675663dcaa68b7a0248a8121bd323099dcc914782`
+APK SHA-256 — universal (arm64, armv7, x86_64; 84 MiB): `6fa43be47a678f45f7d49f5675663dcaa68b7a0248a8121bd323099dcc914782`
+APK SHA-256 — arm64-only (47 MiB, delivered to tester): `65a03f980568b359cc9d60dd38ec363e51719c573476ede5dd7280c4965c62d8`
