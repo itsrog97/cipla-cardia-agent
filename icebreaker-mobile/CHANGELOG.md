@@ -1,0 +1,30 @@
+# Changelog
+
+All notable changes to the Icebreaker mobile app. Versions follow `app.json` (`expo.version` / `android.versionCode`).
+
+## [0.1.0] — 2026-09-30 — ANDROID TEST BUILD (not a final release)
+
+### Added
+- Website audit and documentation set (`docs/`): audit, product spec, user flows, data model, API documentation, design system, QA report.
+- Expo SDK 57 + Expo Router + TypeScript project with a design system mirrored from the website's CSS tokens (light & dark).
+- Secure authentication: login with client + server validation, show/hide password, forgot-password request, sign-up link, tokens in SecureStore, session persistence, silent refresh with single-flight + token rotation, expired-session redirect with notice, logout.
+- Home: Match of the Day, project and "Ask me about this" story carousels, people carousels, pull-to-refresh.
+- Discover: search, 5 filters as bottom sheets, sort (Relevance/Newest), infinite scroll, responsive grid (3/4/6 columns).
+- Profile detail: reasons to connect, commonalities, full profile sections, Save / Saved, Break the Ice (opens or creates the conversation).
+- Chat: channels (join, unread badges) and direct messages (search, unread), conversation and channel views with 4-second polling, send, mark-as-read.
+- Spark AI assistant with streaming responses (SSE), suggestion chips, tool status and structured cards.
+- Notifications list with unread badge, tap-to-navigate, mark read / mark all read.
+- My Profile (read-only) and Settings (email notifications, dark mode synced to account, change password with web's rules, legal/support links, logout).
+- Offline banner, error/empty/loading states, request timeouts and retry policy, accessibility labels, 48 dp touch targets.
+- Release-signing config plugin (`plugins/withReleaseSigning.js`) for AAB builds.
+- 39 automated tests (API client incl. refresh/timeout/offline, SSE parser, formatting, validation, notification routing, Login screen, Composer).
+
+### Known issues
+- Not verified on a physical Android device or emulator by the developer (no emulator available in the build environment).
+- `/home/carousels` is slow (6–14 s) and the backend intermittently returns 502; the app retries but Home can show "Couldn't load this" — tap Try again.
+- Profile editing, channel threads, adding reactions, image/GIF posting and AI reply helpers are not in this build.
+- No push notifications; counts refresh by polling.
+- Release APK is signed with the debug key (side-load only).
+
+### Testing status
+Automated: typecheck ✅, lint ✅, expo-doctor ✅, Jest 39/39 ✅. Web-rendered QA of the same code against the live API: 33/33 walkthrough checks, 12/12 failure-mode checks, 5 viewports ✅. On-device Android testing: **pending (you)**.
