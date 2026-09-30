@@ -63,6 +63,7 @@ npx expo prebuild --platform android --clean     # generates ./android (git-igno
 cd android
 ./gradlew assembleRelease -PreactNativeArchitectures=arm64-v8a,armeabi-v7a,x86_64
 # → android/app/build/outputs/apk/release/app-release.apk
+# Phones only (smaller, ~25 MiB): -PreactNativeArchitectures=arm64-v8a
 ```
 Without `android/keystore.properties` the release APK is signed with the **debug key** — fine for side-loading test builds, not for the Play Store.
 

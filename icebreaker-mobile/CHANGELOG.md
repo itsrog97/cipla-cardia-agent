@@ -17,6 +17,7 @@ All notable changes to the Icebreaker mobile app. Versions follow `app.json` (`e
 - My Profile (read-only) and Settings (email notifications, dark mode synced to account, change password with web's rules, legal/support links, logout).
 - Offline banner, error/empty/loading states, request timeouts and retry policy, accessibility labels, 48 dp touch targets.
 - Minimal Android permissions (INTERNET, network/wifi state, vibrate); overlay/storage/biometric permissions blocked.
+- Smaller APK: compressed native libraries and R8 code/resource shrinking without renaming (`-dontobfuscate`) — arm64 APK 24.6 MiB.
 - Release-signing config plugin (`plugins/withReleaseSigning.js`) for AAB builds.
 - 39 automated tests (API client incl. refresh/timeout/offline, SSE parser, formatting, validation, notification routing, Login screen, Composer).
 
@@ -31,4 +32,4 @@ All notable changes to the Icebreaker mobile app. Versions follow `app.json` (`e
 Automated: typecheck ✅, lint ✅, expo-doctor ✅, Jest 39/39 ✅. Web-rendered QA of the same code against the live API: 33/33 walkthrough checks, 12/12 failure-mode checks, 5 viewports ✅. APK: builds, `apksigner` verified, minSdk 24 / targetSdk 36, no credentials in the bundle. On-device Android testing: **pending (you)**.
 
 APK SHA-256 — universal (arm64, armv7, x86_64; 84 MiB): `6fa43be47a678f45f7d49f5675663dcaa68b7a0248a8121bd323099dcc914782`
-APK SHA-256 — arm64-only (47 MiB, delivered to tester): `65a03f980568b359cc9d60dd38ec363e51719c573476ede5dd7280c4965c62d8`
+APK SHA-256 — arm64-only, shrunk (24.6 MiB, delivered to tester as Icebreaker-v0.1.0-test.apk): `599c17405a6a5abf4da7fb2bc6f0e4a858b932227c2d5aeebe2686c116ae759e`

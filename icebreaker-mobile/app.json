@@ -50,7 +50,18 @@
         }
       ],
       "expo-asset",
-      "./plugins/withReleaseSigning"
+      "./plugins/withReleaseSigning",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "useLegacyPackaging": true,
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true,
+            "extraProguardRules": "-dontobfuscate\n-keepattributes *Annotation*,Signature,InnerClasses,EnclosingMethod\n"
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": false
